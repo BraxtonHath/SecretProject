@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"><head>
+    <meta charset="UTF-8" />
+    <title></title>
+</head>
+<body>
+<h1>aye</h1>
+<form th:action="@{/createSecret}" method="post" th:object="${newSecret}">
+    <textarea type="text" th:field="*{body}" row="5" cols="65"></textarea>
+    <input type="submit" value="add Secret">
+</form>
+
+<ul>
+    <li th:each="secret : ${secrets}" th:text="${secret.body}"></li>
+</ul>
+</body>
+</html>
