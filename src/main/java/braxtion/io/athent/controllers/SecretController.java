@@ -21,6 +21,7 @@ public class SecretController {
     public String createSecretForm(@RequestParam("body") String body) {
         Secret newSecret = new Secret();
         newSecret.setBody(body);
+        secretRepo.save(newSecret);
         return "redirect:/";
     }
 }
